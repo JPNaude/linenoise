@@ -837,7 +837,7 @@ int linenoiseHistorySetMaxLen(int len) {
             for (j = 0; j < tocopy-len; j++) free(history[j]);
             tocopy = len;
         }
-        memset(new,0,sizeof(char*)*len);
+        memset(newhist,0,sizeof(char*)*len);
         memcpy(newhist,history+(history_max_len-tocopy), sizeof(char*)*tocopy);
         free(history);
         history = newhist;
